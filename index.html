@@ -242,6 +242,17 @@
               </ul>
           </li>
           <li>
+            <a href="#workouts" class="toc-h1 toc-link" data-title="Workouts">Workouts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-workouts-for-a-user" class="toc-h2 toc-link" data-title="Get all workouts for a User">Get all workouts for a User</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-new-workout" class="toc-h2 toc-link" data-title="Create a New Workout">Create a New Workout</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -379,7 +390,7 @@ Remember — a happy kitten is an authenticated kitten!
 <p>This endpoint retrieves a specific kitten.</p>
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -418,9 +429,9 @@ Remember — a happy kitten is an authenticated kitten!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -430,6 +441,70 @@ Remember — a happy kitten is an authenticated kitten!
 <tr>
 <td>ID</td>
 <td>The ID of the kitten to delete</td>
+</tr>
+</tbody></table>
+<h1 id='workouts'>Workouts</h1>
+<aside class="notice">
+The following code loads workouts
+</aside>
+
+<p>Workout endpoints:</p>
+<h2 id='get-all-workouts-for-a-user'>Get all workouts for a User</h2>
+<p>Returns all workouts for the authenticated user.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET http://api.wahooligan.com/cloud-api/workouts</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>after</td>
+<td>integer</td>
+<td>no</td>
+<td>0</td>
+<td>If set to true, the result will also include cats.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>yes</td>
+<td>50</td>
+<td>If set to false, the result will include kittens that have already been adopted.</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-new-workout'>Create a New Workout</h2>
+<p>Creates a workout for the authenticated user.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST http://api.wahooligan.com/cloud-api/workouts</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>after</td>
+<td>integer</td>
+<td>no</td>
+<td>0</td>
+<td>If set to true, the result will also include cats.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>yes</td>
+<td>50</td>
+<td>If set to false, the result will include kittens that have already been adopted.</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
